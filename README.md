@@ -24,4 +24,6 @@ La API tiene dos endpoints principales:
 
 Por favor, ten en cuenta que este proyecto está en desarrollo y puede contener errores o inconsistencias.
 
+### Colaboradores
+
 [![Contribuidores](https://contrib.rocks/image?repo=code3743/polnews)](https://github.com/code3743/polnews/graphs/contributors)
