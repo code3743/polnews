@@ -23,3 +23,5 @@ La API tiene dos endpoints principales:
 - `/noticia/:slug`: Este endpoint devuelve los detalles de una noticia específica, donde `:slug` es el identificador único de la noticia.
 
 Por favor, ten en cuenta que este proyecto está en desarrollo y puede contener errores o inconsistencias.
+
+[![Contribuidores](https://contrib.rocks/image?repo=code3743/polnews)](https://github.com/code3743/polnews/graphs/contributors)
