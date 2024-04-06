@@ -9,7 +9,7 @@ const { getAllNewsService } = require('../services/news.scraper.service');
  * @param {request} req 
  * @param {response} res 
  */
-const getAllNews = async( req, res) => {
+const getAllNewsController = async( req, res) => {
     try {
         const page = req.query.page ?? 0;
         const response = await fetchData(PATH_ALL_NEWS.replace('PAGE', parseInt(page)));
@@ -29,7 +29,7 @@ const getAllNews = async( req, res) => {
  * @param {request} req 
  * @param {response} res 
  */
-const getNews = async( req, res) => {
+const getNewsDetailsController = async( req, res) => {
     try {
         const slug = req.params.slug;
 
@@ -45,6 +45,6 @@ const getNews = async( req, res) => {
 }
 
 module.exports = {
-    getAllNews,
-    getNews
+    getAllNewsController,
+    getNewsDetailsController
 }
