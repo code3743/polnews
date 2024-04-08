@@ -47,7 +47,29 @@ const getNewsDataExtractor = (element)=>{
     }
 }
 
+/**
+ * 
+ * @param {string} html 
+ */
+const getAllNewsDetails = (html)=>{
+    try {
+        const $ = cheerio.load(html);
+        const tittle = $('#page-title').text();
+        const place = $('div[itemprop="address"]').text();
+        const date= $('.date-display-single').text();
+        const summary = $('.field-name-field-resumen').text();
+        const images = [];
+         $('.field-name-slider-noticias').find('img').each((i,element) => {
+           images.push(element.attribs.src);
+        });
+        const body = $('.node-noticias').text().replace(place, '').replace(date, '').replace(summary, '').replace('>>>', '').trim();
+        return {tittle,place,date,summary,images,body};
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 module.exports = {
-    getAllNewsService
+    getAllNewsService,
+    getAllNewsDetails
 }
