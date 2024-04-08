@@ -12,15 +12,19 @@ Para instalar y ejecutar este proyecto, sigue los siguientes pasos:
 2. Navega hasta el directorio del proyecto.
 3. Ejecuta `npm install` para instalar todas las dependencias necesarias.
 
+### Modo de Desarrollo
+
+Para iniciar el proyecto en modo de desarrollo, ejecuta `npm run dev`. Asegúrate de tener nodemon instalado globalmente o como una dependencia de desarrollo en tu proyecto.
+
 ### Uso
 
-Una vez instalado, puedes iniciar el servidor con `npm start`. Esto pondrá en marcha el servidor en el puerto que hayas configurado.
-por defecto el puerto es 3000
+Una vez instalado, puedes iniciar el servidor con `npm start`. Esto pondrá en marcha el servidor en el puerto que hayas configurado. Por defecto, el puerto es 3000.
 
-La API tiene dos endpoints principales:
+La API tiene tres endpoints principales:
 
-- `/noticias`: Este endpoint devuelve todas las noticias disponibles.
+- `/noticias?page=INDEX`: Este endpoint devuelve todas las noticias disponibles. Soporta paginación, donde `INDEX` es el número de página.
 - `/noticia/:slug`: Este endpoint devuelve los detalles de una noticia específica, donde `:slug` es el identificador único de la noticia.
+- `/buscar?key=PALABRA`: Este endpoint permite buscar noticias por palabra clave, donde `PALABRA` es la palabra clave de búsqueda.
 
 Por favor, ten en cuenta que este proyecto está en desarrollo y puede contener errores o inconsistencias.
 
