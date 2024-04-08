@@ -1,8 +1,7 @@
 const { request, response } = require('express');
 const { fetchData } = require('../services/axios.requests.service');
-const { PATH_ALL_NEWS } = require('../config/constants');
-const { getAllNewsService } = require('../services/news.scraper.service');
-
+const { PATH_ALL_NEWS, PATH_DETAILS_NEWS } = require('../config/constants');
+const { getAllNewsService, getAllNewsDetails } = require('../services/news.scraper.service');
 
 /**
  * 
@@ -32,9 +31,10 @@ const getAllNewsController = async( req, res) => {
 const getNewsDetailsController = async( req, res) => {
     try {
         const slug = req.params.slug;
-
+        const response = await fetchData(`${PATH_DETAILS_NEWS}/${slug}`);
+        const allNewsData = getNewsDetails(response);
         res.json({
-            mensaje: 'Hola mundo'
+            ...allNewsData
         })
         
     } catch (error) {
