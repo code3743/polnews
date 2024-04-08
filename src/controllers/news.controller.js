@@ -15,7 +15,7 @@ const getAllNewsController = async( req, res) => {
         const response = await fetchData(PATH_ALL_NEWS.replace('PAGE', parseInt(page)));
         const allNewsData = getAllNewsService(response);
         res.json({
-            noticias: allNewsData
+            news: allNewsData
         })
     } catch (error) {
         res.json({
