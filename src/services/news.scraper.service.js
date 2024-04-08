@@ -51,7 +51,7 @@ const getNewsDataExtractor = (element)=>{
  * 
  * @param {string} html 
  */
-const getAllNewsDetails = (html)=>{
+const getNewsDetails = (html)=>{
     try {
         const $ = cheerio.load(html);
         const tittle = $('#page-title').text();
@@ -71,5 +71,5 @@ const getAllNewsDetails = (html)=>{
 
 module.exports = {
     getAllNewsService,
-    getAllNewsDetails
+    getNewsDetails
 }
