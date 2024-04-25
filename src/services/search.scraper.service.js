@@ -15,7 +15,7 @@ const searchNewsServices = (html) => {
             }
         }).get();
         const lastPageRaw = $('.pager .pager-last > a')?.attr('href');
-        const lastPage = lastPageRaw ? lastPageRaw.split('&page=')[1].trim() : 0;
+        const lastPage = lastPageRaw ? parseInt(lastPageRaw.split('&page=')[1]) : 0;
         return {
             headlines,
             lastPage

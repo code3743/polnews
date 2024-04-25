@@ -18,7 +18,7 @@ const searchNewsController = async( req, res) => {
                 error: 'No se ha enviado la palabra clave'
             }).sendStatus(400); 
         }
-        const response = await fetchData(PATH_SEARCH.replace('QUERY', keyword).replace('PAGE', parseInt(page)));   
+        const response = await fetchData(PATH_SEARCH.replace('QUERY', keyword).replace('PAGE', page));   
         const { headlines, lastPage }  = searchNewsServices(response);
         res.json({
             keyword,
