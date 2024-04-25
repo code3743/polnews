@@ -22,9 +22,12 @@ Una vez instalado, puedes iniciar el servidor con `npm start`. Esto pondrá en m
 
 La API tiene tres endpoints principales:
 
-- `/noticias?page=INDEX`: Este endpoint devuelve todas las noticias disponibles. Soporta paginación, donde `INDEX` es el número de página.
-- `/noticia/:slug`: Este endpoint devuelve los detalles de una noticia específica, donde `:slug` es el identificador único de la noticia.
-- `/buscar?key=PALABRA`: Este endpoint permite buscar noticias por palabra clave, donde `PALABRA` es la palabra clave de búsqueda.
+- `/api/noticias?page=INDEX`: Este endpoint devuelve todas las noticias disponibles. Soporta paginación, donde `INDEX` es el número de página.
+- `/api/noticia/:slug`: Este endpoint devuelve los detalles de una noticia específica, donde `:slug` es el identificador único de la noticia.
+- `/api/buscar?key=PALABRA&page=INDEX`: Este endpoint permite buscar noticias por palabra clave, donde `PALABRA` es la palabra clave de búsqueda.
+
+El parametro `page` es opcional y se utiliza para la paginación. Si no se proporciona, se devolverán los resultados de la primera página.
+
 
 Por favor, ten en cuenta que este proyecto está en desarrollo y puede contener errores o inconsistencias.
 
