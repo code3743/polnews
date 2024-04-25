@@ -1,7 +1,7 @@
 const { request, response } = require('express');
 const { fetchData } = require('../services/axios.requests.service');
 const { PATH_ALL_NEWS, PATH_DETAILS_NEWS } = require('../config/constants');
-const { getAllNewsService, getAllNewsDetails } = require('../services/news.scraper.service');
+const { getAllNewsService, getNewsDetails } = require('../services/news.scraper.service');
 
 /**
  * 
@@ -38,6 +38,7 @@ const getNewsDetailsController = async( req, res) => {
         })
         
     } catch (error) {
+        console.log(error);
         res.json({
             error: error
         }).sendStatus(500)
