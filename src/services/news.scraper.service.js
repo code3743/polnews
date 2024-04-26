@@ -54,7 +54,7 @@ const getNewsDataExtractor = (element)=>{
 const getNewsDetails = (html)=>{
     try {
         const $ = cheerio.load(html);
-        const tittle = $('#page-title').text();
+        const title = $('#page-title').text();
         const place = $('div[itemprop="address"]').text();
         const date= $('.date-display-single').text();
         const summary = $('.field-name-field-resumen').text();
@@ -63,7 +63,7 @@ const getNewsDetails = (html)=>{
            images.push(element.attribs.src);
         });
         const body = $('.node-noticias').text().replace(place, '').replace(date, '').replace(summary, '').replace('>>>', '').trim();
-        return {tittle,place,date,summary,images,body};
+        return {title,place,date,summary,images,body};
     } catch (error) {
         console.log(error);
     }
